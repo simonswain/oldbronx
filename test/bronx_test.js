@@ -28,8 +28,9 @@ exports['bronx'] = {
     done();
   },
   'no args': function(test) {
-    test.expect(1);
-    test.ok(bronx.api, 'should exist.');
+    test.expect(2);
+    test.ok(bronx.config, 'should exist.');
+    test.ok(bronx.db, 'should exist.');
     test.done();
   },
 };

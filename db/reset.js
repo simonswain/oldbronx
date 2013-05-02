@@ -1,7 +1,7 @@
 'use strict';
 
 var fs = require('fs');
-var db = require('../lib/bronx').api.db;
+var db = require('../lib/bronx').db;
 
 module.exports = function(done) {
 

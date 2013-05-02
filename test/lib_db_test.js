@@ -1,6 +1,6 @@
 "use strict";
 
-var db = require('../lib/bronx').api.db;
+var db = require('../lib/bronx').db;
 
 exports.devices = {
   'callback-query': function(test) {    
