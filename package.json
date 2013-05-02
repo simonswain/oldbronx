@@ -36,6 +36,18 @@
   "keywords": [],
   "dependencies": {
     "pg": "~1.1.0",
-    "any-db": "~0.4.4"
+    "any-db": "~0.4.4",
+    "express": "3.x",
+    "jade": "*",
+    "async": "~0.2.8",
+    "underscore": "~1.4.4",
+    "redis": "~0.8.3",
+    "connect-redis": "~1.4.5",
+    "hiredis": "~0.1.15",
+    "passport-local": "~0.1.6",
+    "passport": "~0.1.16",
+    "bcrypt": "~0.7.5",
+    "bundle-up": "~0.3.5",
+    "less-middleware": "~0.1.11"
   }
 }
