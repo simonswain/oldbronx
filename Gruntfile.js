@@ -35,7 +35,23 @@ module.exports = function(grunt) {
         tasks: ['jshint:test', 'nodeunit']
       },
     },
+    env : {
+      dev : {
+        NODE_ENV : 'dev'
+      },
+      test : {
+        NODE_ENV : 'test'
+      },
+      stage : {
+        NODE_ENV : 'stage'
+      },
+      production : {
+        NODE_ENV : 'production'
+      }
+    }
   });
+
+  grunt.loadTasks('tasks');
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
@@ -43,6 +59,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'nodeunit']);
+  grunt.registerTask('default', ['jshint', 'env:test', 'nodeunit']);
 
 };
