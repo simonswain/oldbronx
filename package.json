@@ -1,0 +1,41 @@
+{
+  "name": "bronx",
+  "description": "Webapp Framework",
+  "version": "0.1.0",
+  "homepage": "https://github.com/simonswain/bronx",
+  "author": {
+    "name": "Simon Swain",
+    "email": "simon@simonswain.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/simonswain/bronx.git"
+  },
+  "bugs": {
+    "url": "https://github.com/simonswain/bronx/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/simonswain/bronx/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/bronx",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt nodeunit"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.1.1",
+    "grunt-contrib-nodeunit": "~0.1.2",
+    "grunt-contrib-watch": "~0.2.0",
+    "grunt": "~0.4.1"
+  },
+  "keywords": [],
+  "dependencies": {
+    "pg": "~1.1.0",
+    "any-db": "~0.4.4"
+  }
+}
