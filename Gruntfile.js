@@ -66,16 +66,16 @@ module.exports = function(grunt) {
   });
 
   grunt.loadTasks('tasks');
-  grunt.loadNpmTasks('grunt-bower-task');
 
-  // These plugins provide necessary tasks.
+  grunt.loadNpmTasks('grunt-bower-task');
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.registerTask('test', ['env:test', 'jshint', 'nodeunit']);
 
-  // Default task.
   grunt.registerTask('default', ['test']);
+
+  grunt.registerTask('build', ['bower']);
 
 };
