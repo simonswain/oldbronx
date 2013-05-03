@@ -58,7 +58,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
+  grunt.registerTask('test', ['env:test', 'jshint', 'nodeunit']);
+
   // Default task.
-  grunt.registerTask('default', ['jshint', 'env:test', 'nodeunit']);
+  grunt.registerTask('default', ['test']);
 
 };

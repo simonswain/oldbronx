@@ -1,10 +1,10 @@
 'use strict';
 
-var fs = require('fs');
-var db = require('../lib/bronx').db;
-
 module.exports = function(done) {
 
+  var db = require('../lib/bronx').db;
+
+  var fs = require('fs');
   var schema = fs.readFileSync ( __dirname + '/schema.sql', 'ascii');
   var init = fs.readFileSync ( __dirname + '/init.sql', 'ascii');
 
