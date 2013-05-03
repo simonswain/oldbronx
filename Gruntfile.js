@@ -48,10 +48,25 @@ module.exports = function(grunt) {
       production : {
         NODE_ENV : 'production'
       }
-    }
+    },
+    bower: {
+      install: {
+        //just run 'grunt bower:install' and you'll see files from
+        //your Bower packages in lib directory
+      },
+      options: {
+        targetDir: './server/public/vendor',
+        cleanTargetDir: false,
+        cleanBowerDir: true,
+        layout: 'byComponent',
+        install: true,
+        verbose: true
+      }
+    },
   });
 
   grunt.loadTasks('tasks');
+  grunt.loadNpmTasks('grunt-bower-task');
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
