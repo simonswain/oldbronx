@@ -1,0 +1,17 @@
+extends layouts/default
+block content
+  div.row
+    div.span4
+    div.span4
+      h2 Sign Up
+      br
+      form.sign-up(action="/sign-in", method="post")
+        .control-group
+          input.input-block-level(type='text', placeholder='e-mail', name="email")
+        .control-group
+          input.input-block-level(type='text', placeholder='username', name="username") 
+        .control-group
+          input.input-block-level(type='password', placeholder='*************', name="password")
+        .control-group
+          button.btn.btn-block(type='submit') Sign Up
+    div.span4

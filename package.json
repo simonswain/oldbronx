@@ -50,6 +50,8 @@
     "passport": "~0.1.16",
     "bcrypt": "~0.7.5",
     "bundle-up": "~0.3.5",
-    "less-middleware": "~0.1.11"
+    "less-middleware": "~0.1.11",
+    "grunt-bower-task": "~0.2.3",
+    "piler": "~0.4.1"
   }
 }

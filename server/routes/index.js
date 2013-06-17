@@ -4,37 +4,6 @@ var fs = require('fs');
 
 module.exports = function(app){
 
-  // if user logged in, serve app, else serve landing lage
-
-  var home = function(req, res) {
-    var access = false;
-    if ( typeof req.user !== 'undefined' ) {
-      access = 'user';      
-      if ( req.user.privs.indexOf('admin') !== -1 ) {
-        access = 'admin';
-      }
-    }
-    if (access) {
-      return res.render('app', {
-        title: app.config.name,
-        access: access
-      });
-    }
-    return res.render('index', {title: app.config.name});
-  };
-
-  var login = function(req, res) {
-    return res.render('login', {title: app.config.name});
-  }; 
-
- var signup = function(req, res) {
-    return res.render('signup', {title: app.config.name});
-  };
-
-  app.get('/', home);
-  app.get('/login', login);
-  app.get('/signup', signup);
-
   fs.readdirSync(__dirname).forEach(function(file) {
 
     if (file === 'index.js') {
@@ -64,6 +33,6 @@ module.exports = function(app){
 
   });
 
-  app.get('*', home);
+  //app.get('*', home);
 
 };
