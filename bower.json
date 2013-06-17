@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "jquery": "2.0.0",
+    "underscore": "1.4",
+    "backbone": "1.0",
+    "bootstrap": "http://twitter.github.com/bootstrap/assets/bootstrap.zip"
+  }
+}
