@@ -22,7 +22,10 @@
   ],
   "main": "index.js",
   "engines": {
-    "node": ">= 0.8.0"
+    "node": ">= 0.10.0"
+  },
+  "bin": {
+    "bro": "./bro.js"
   },
   "scripts": {
     "test": "grunt nodeunit"
