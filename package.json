@@ -55,6 +55,7 @@
     "bundle-up": "~0.3.5",
     "less-middleware": "~0.1.11",
     "grunt-bower-task": "~0.2.3",
-    "piler": "~0.4.1"
+    "piler": "~0.4.1",
+    "validator": "~1.2.1"
   }
 }
