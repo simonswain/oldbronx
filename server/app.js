@@ -3,6 +3,7 @@ var http = require('http');
 var fs = require('fs');
 var piler = require("piler");
 var less = require('less-middleware');
+var validator = require('express-validator');
 
 module.exports = function(bronx){
 
@@ -62,6 +63,7 @@ module.exports = function(bronx){
     app.use(express.methodOverride());
     app.use(express.cookieParser());
     app.use(express.bodyParser());
+    app.use(validator());
 
     // catch malformed json
     app.use(clientErrorHandler = function(err, req, res, next) {
