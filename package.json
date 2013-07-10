@@ -56,6 +56,6 @@
     "less-middleware": "~0.1.11",
     "grunt-bower-task": "~0.2.3",
     "piler": "~0.4.1",
-    "validator": "~1.2.1"
+    "express-validator": "~0.6.0"
   }
 }
