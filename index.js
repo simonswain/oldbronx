@@ -1,20 +1,31 @@
-'use strict';
+"use strict";
 
-var bronx = require('./lib/bronx');
 var server = require('./server/app');
 
-module.exports = function(opts){  
+module.exports = function(opts, done){  
   
-  bronx.root = opts.root;
-  var myserver = server(bronx);
+  var db = require('./lib/db')(opts.config);
 
-  return {
-    server:{
-      start: function(){
-        //console.log('starting server');
-        myserver.start();
-      }
+  var bronx = {
+    root: opts.root,
+    config: opts.config,
+    db: db,
+    api: {
+      users: require('./lib/users')(db)
     }
   }
+
+  
+  var myserver = server(bronx);
+
+  bronx.server = {
+    start: function(){
+      console.log('starting server');
+      myserver.start();
+    }
+  };
+
+  done(null, bronx);
+  
 
 }
