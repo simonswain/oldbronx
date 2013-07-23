@@ -134,43 +134,46 @@ module.exports = function(bronx){
     fs.mkdir(views_cache + '/layouts');
   }
 
-  fs.readdirSync(__dirname + '/views').forEach(function(f) {
+  fs.readdirSync(bronx.root + '/views').forEach(function(f) {
 
     if ( f.substr(0,1) === '.' ) {
       return;
     }
     
-    var stats = fs.statSync(__dirname + '/views/' + f);
+    var stats = fs.statSync(bronx.root + '/views/' + f);
     if (stats.isFile()) {
-      fs.createReadStream(__dirname + '/views/' + f)
+      fs.createReadStream(bronx.root + '/views/' + f)
         .pipe(fs.createWriteStream(views_cache + '/' + f));
     };
 
   });
 
-  fs.readdirSync(__dirname + '/views/layouts').forEach(function(f) {
+  fs.readdirSync(bronx.root + '/views/layouts').forEach(function(f) {
 
     if ( f.substr(0,1) === '.' ) {
       return;
     }
 
-    var stats = fs.statSync(__dirname + '/views/layouts/' + f );
+    var stats = fs.statSync(bronx.root + '/views/layouts/' + f );
     if (stats.isFile()) {
-      fs.createReadStream(__dirname + '/views/layouts/' + f)
+      fs.createReadStream(bronx.root + '/views/layouts/' + f)
         .pipe(fs.createWriteStream(views_cache + '/layouts/' + f));
     };
 
   });
 
-  fs.readdirSync(__dirname + '/views/includes/').forEach(function(f) {
+  fs.readdirSync(bronx.root + '/views/includes/').forEach(function(f) {
 
     if ( f.substr(0,1) === '.' ) {
       return;
     }
 
-    var stats = fs.statSync(__dirname + '/views/includes/' + f );
+    var stats = fs.statSync(bronx.root + '/views/includes/' + f );
+
+    console.log(':' + bronx.root + '/views/includes/' + f);
+
     if (stats.isFile()) {
-      fs.createReadStream(__dirname + '/views/includes/' + f)
+      fs.createReadStream(bronx.root + '/views/includes/' + f)
         .pipe(fs.createWriteStream(views_cache + '/includes/' + f));
     };
 
